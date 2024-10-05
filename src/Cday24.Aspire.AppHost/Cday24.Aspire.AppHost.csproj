@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>0d49413d-d761-4cf1-ba21-17d657a0ea8b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.1" />
+    <PackageReference Include="Aspire.Hosting.Azure.CognitiveServices" Version="8.2.1" />
+    <PackageReference Include="Aspire.Hosting.Azure.PostgreSQL" Version="8.2.1" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="8.2.1" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="8.2.1" />
+    <PackageReference Include="Aspire.Hosting.Python" Version="8.2.1" />
+    <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="8.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cday24.Aspire.BackofficeApi\Cday24.Aspire.BackofficeApi.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.BackofficeDbManager\Cday24.Aspire.BackofficeDbManager.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.CustomerApi\Cday24.Aspire.CustomerApi.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.CustomerApp\Cday24.Aspire.CustomerApp.csproj" />
+  </ItemGroup>
+
+</Project>

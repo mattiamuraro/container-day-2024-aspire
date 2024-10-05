@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/Cday24.Aspire.AppHost/appsettings.json
+/src/Cday24.Aspire.AppHost/appsettings.Development.json
+/src/Cday24.Aspire.WeightApi/.venv

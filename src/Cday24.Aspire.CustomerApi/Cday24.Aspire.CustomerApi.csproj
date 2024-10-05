@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.RabbitMQ.Client" Version="8.2.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cday24.Aspire.Customer.Models\Cday24.Aspire.Customer.Models.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.Models\Cday24.Aspire.Models.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.ServiceDefaults\Cday24.Aspire.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

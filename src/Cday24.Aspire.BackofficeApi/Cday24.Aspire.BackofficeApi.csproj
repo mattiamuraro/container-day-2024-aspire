@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Azure.AI.OpenAI" Version="8.2.1-preview.1.24473.4" />
+	  <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.2.1" />
+	  <PackageReference Include="Aspire.RabbitMQ.Client" Version="8.2.1" />
+	  <PackageReference Include="MassTransit" Version="8.2.5" />
+	  <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.5" />
+
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cday24.Aspire.Data\Cday24.Aspire.Data.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.Models\Cday24.Aspire.Models.csproj" />
+    <ProjectReference Include="..\Cday24.Aspire.ServiceDefaults\Cday24.Aspire.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

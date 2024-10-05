@@ -1,0 +1,40 @@
+﻿@page "/ticket-create"
+@using Cday24.Aspire.Customer.Models.ViewModels
+@using Cday24.Aspire.CustomerApp.HttpClients
+@inject CustomerApiClient customerApiClient
+@inject NavigationManager navigationManager
+
+<h3>Ticket</h3>
+<EditForm Model="Model" OnValidSubmit="Submit" FormName="ticket-create">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="title">Title</label>
+        <InputText @bind-Value="Model!.Title" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter ticket title" />
+
+        <label for="description">Description</label>
+        <InputTextArea @bind-Value="Model!.Description" class="form-control" id="description" aria-describedby="descriptionHelp" placeholder="Enter ticket description" />
+
+        <label for="creator">Creator</label>
+        <InputText @bind-Value="Model!.Creator" class="form-control" id="creator" aria-describedby="creatorHelp" placeholder="Enter ticket creator" />
+
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit ticket</button>
+    </div>
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    public TicketRequestViewModel Model { get; set; } = new TicketRequestViewModel();
+
+    async Task Submit()
+    {
+        var result = await customerApiClient.CreateNewTicketAsync(Model);
+
+        if (result)
+        {
+            navigationManager.NavigateTo(navigationManager.Uri, true);
+        }
+    }
+}
