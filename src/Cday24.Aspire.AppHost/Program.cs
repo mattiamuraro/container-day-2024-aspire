@@ -8,11 +8,12 @@ var password = builder.AddParameter("rabbitMqPassword", secret: true);
 var messaging = builder.AddRabbitMQ("messaging", username, password)
                        .WithManagementPlugin();
 
-var backofficePostreSQL = builder.AddPostgres("backofficePostgreSQL")
-                      .WithDataVolume("backofficePostgresDataVolume")
+var backofficePostgreSQL = builder.AddPostgres("backofficepostgresql")
+                      .WithDataVolume("backofficepostgresdatavolume")
                       .WithPgAdmin();
 
-var backofficeDatabase = backofficePostreSQL.AddDatabase("backofficeDatabase");
+
+var backofficeDatabase = backofficePostgreSQL.AddDatabase("backofficedatabase");
 
 var azureOpenAi = builder.AddAzureOpenAI("azureopenai")
                          .AddDeployment(new AzureOpenAIDeployment(azureOpenAiDeploymentName, "gpt-4o", "2024-05-13", "GlobalStandard", 10));
@@ -20,11 +21,10 @@ var azureOpenAi = builder.AddAzureOpenAI("azureopenai")
 var backofficedbmanager = builder.AddProject<Projects.Cday24_Aspire_BackofficeDbManager>("backofficedbmanager")
                                  .WithReference(backofficeDatabase);
 
-var weightApi = builder.AddPythonProject("weightApi", "../Cday24.Aspire.WeightApi", "app.py")
+var weightApi = builder.AddPythonProject("weightapi", "../Cday24.Aspire.WeightApi", "app.py")
                               .WithEndpoint(scheme: "http", env: "PORT");
 
 var customerApi = builder.AddProject<Projects.Cday24_Aspire_CustomerApi>("customerapi")
-                         .WithReplicas(2)
                          .WithEnvironment("rabbitMq__queueName", queueName)
                          .WithReference(messaging);
 
@@ -40,7 +40,7 @@ var backofficeApi = builder.AddProject<Projects.Cday24_Aspire_BackofficeApi>("ba
                            .WithReference(azureOpenAi)
                            .WithReference(backofficeDatabase);
 
-var backofficeApp = builder.AddNpmApp("backofficeApp", "../Cday24.Aspire.BackofficeApp")
+var backofficeApp = builder.AddNpmApp("backofficeapp", "../Cday24.Aspire.BackofficeApp")
                            .WithHttpEndpoint(env: "PORT")
                            .WithExternalHttpEndpoints()
                            .PublishAsDockerFile()

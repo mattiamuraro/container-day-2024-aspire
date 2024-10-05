@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 builder.AddRabbitMQClient("messaging");
 builder.AddAzureOpenAIClient("azureopenai");
-builder.AddNpgsqlDbContext<Cday24DbContext>("backofficeDatabase");
+builder.AddNpgsqlDbContext<Cday24DbContext>("backofficedatabase");
 
 builder.Services.AddProblemDetails();
 
@@ -20,7 +20,7 @@ builder.Services.AddScoped<OpenAiService>();
 builder.Services.AddScoped<TicketService>();
 
 builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("rabbitMq"));
-builder.Services.Configure<AzureOpenAiSettings>(builder.Configuration.GetSection("azureOpenAi"));
+builder.Services.Configure<AzureOpenAiSettings>(builder.Configuration.GetSection("azureopenai"));
 
 builder.Services.AddMassTransit(x =>
 {

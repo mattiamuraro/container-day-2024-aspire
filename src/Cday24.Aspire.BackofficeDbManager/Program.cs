@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddNpgsqlDbContext<Cday24DbContext>("backofficeDatabase", null,
+builder.AddNpgsqlDbContext<Cday24DbContext>("backofficedatabase", null,
                                             optionsBuilder => optionsBuilder.UseNpgsql(npgsqlBuilder =>
                                             npgsqlBuilder.MigrationsAssembly(typeof(Program).Assembly.GetName().Name)));
 
