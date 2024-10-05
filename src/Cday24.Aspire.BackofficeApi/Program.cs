@@ -10,7 +10,6 @@ using MassTransit;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddRabbitMQClient("messaging");
 builder.AddAzureOpenAIClient("azureopenai");
 builder.AddNpgsqlDbContext<Cday24DbContext>("backofficedatabase");
 

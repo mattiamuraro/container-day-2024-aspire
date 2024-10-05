@@ -6,7 +6,6 @@ using MassTransit;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddRabbitMQClient("messaging");
 
 builder.Services.AddMassTransit(x =>
 {
