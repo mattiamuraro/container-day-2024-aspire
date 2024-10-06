@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cday24.Aspire.Customer.Mode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cday24.Aspire.CustomerApp", "Cday24.Aspire.CustomerApp\Cday24.Aspire.CustomerApp.csproj", "{EDB2D026-FDBA-462F-B588-C3EB9B7381D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cday24.Aspire.Models", "Cday24.Aspire.Models\Cday24.Aspire.Models.csproj", "{89E196E1-A613-49FD-B4F6-48A858F33E41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cday24.Aspire.Models", "Cday24.Aspire.Models\Cday24.Aspire.Models.csproj", "{89E196E1-A613-49FD-B4F6-48A858F33E41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

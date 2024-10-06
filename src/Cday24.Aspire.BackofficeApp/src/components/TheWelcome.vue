@@ -34,11 +34,7 @@ export default {
   },
   methods: {
     showDialog(message: string) {
-      this.dialogMessage = message;
-      this.$refs.aiDialog.showModal();
-    },
-    closeDialog() {
-      this.$refs.aiDialog.close();
+      alert(message);
     }
   }
 }
@@ -69,10 +65,6 @@ export default {
       </tr>
     </tbody>
   </table>
-  <dialog ref="aiDialog">
-      <p>{{ dialogMessage  }}</p>
-      <button @click="closeDialog">Chiudi</button>
-    </dialog>
 </template>
 
 <style>

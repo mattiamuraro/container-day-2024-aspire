@@ -44,6 +44,7 @@ var backofficeApp = builder.AddNpmApp("backofficeapp", "../Cday24.Aspire.Backoff
                            .WithHttpEndpoint(env: "PORT")
                            .WithExternalHttpEndpoints()
                            .PublishAsDockerFile()
-                           .WithReference(backofficeApi);
+                           .WithReference(backofficeApi)
+;
 
 builder.Build().Run();
