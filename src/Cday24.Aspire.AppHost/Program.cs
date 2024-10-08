@@ -15,7 +15,7 @@ var backofficePostgreSQL = builder.AddPostgres("backofficepostgresql")
 
 var backofficeDatabase = backofficePostgreSQL.AddDatabase("backofficedatabase");
 
-var azureOpenAi = builder.AddAzureOpenAI("azureopenai")
+var azureOpenAi = builder.AddAzureOpenAI("azureopenaigpt4o")
                          .AddDeployment(new AzureOpenAIDeployment(azureOpenAiDeploymentName, "gpt-4o", "2024-05-13", "GlobalStandard", 10));
 
 var backofficedbmanager = builder.AddProject<Projects.Cday24_Aspire_BackofficeDbManager>("backofficedbmanager")

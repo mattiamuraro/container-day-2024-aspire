@@ -10,7 +10,7 @@ using MassTransit;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddAzureOpenAIClient("azureopenai");
+builder.AddAzureOpenAIClient("azureopenaigpt4o");
 builder.AddNpgsqlDbContext<Cday24DbContext>("backofficedatabase");
 
 builder.Services.AddProblemDetails();
