@@ -12,7 +12,6 @@ var backofficePostgreSQL = builder.AddPostgres("backofficepostgresql")
                       .WithDataVolume("backofficepostgresdatavolume")
                       .WithPgAdmin();
 
-
 var backofficeDatabase = backofficePostgreSQL.AddDatabase("backofficedatabase");
 
 var azureOpenAi = builder.AddAzureOpenAI("azureopenaigpt4o")
